@@ -1,0 +1,6 @@
+# access url , port setting in svc yaml
+http://<node-ip>:32000
+# get pod name for get password, Replace the pod name with your pod name
+kubectl get pods --namespace=default
+kubectl logs jenkins-deployment-2539456353-j00w5 --namespace=default
+kubectl exec -it jenkins-559d8cd85c-cfcgk cat /var/jenkins_home/secrets/initialAdminPassword -n default
