@@ -26,3 +26,21 @@ subjects:
 - kind: ServiceAccount
   name: jenkins-admin
   namespace: default
+
+################以下是綁定的賬號jenkins-admin是集群管理員的角色的範例。 為了控制權限，建議綁定自定義角色###################
+#---
+#kind: ClusterRoleBinding
+#apiVersion: rbac.authorization.k8s.io/v1
+#metadata:
+#  name: jenkins-admin
+#  labels:
+#    name: jenkins
+#subjects:
+#  - kind: ServiceAccount
+#    name: jenkins-admin
+#    namespace: default
+#roleRef:
+#  kind: ClusterRole
+#  # cluster-admin 是 k8s 集群中默認的管理員角色
+#  name: cluster-admin
+#  apiGroup: rbac.authorization.k8s.io
